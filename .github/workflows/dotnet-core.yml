@@ -32,6 +32,7 @@ jobs:
         username: ${{ secrets.REGISTRY_USERNAME }}
         password: ${{ secrets.REGISTRY_PASSWORD }}
     - run: |
-        docker build -t openhack06u2z0e9acr.azurecr.io/api-poi:${{ github.run_number }} --build-arg build_version=${{github.run_number}} apis/poi/
-        docker push ${{ secrets.REGISTRY_LOGIN_SERVER }}/api-poi:${{ github.run_number }}
+        docker build -t openhack06u2z0e9acr.azurecr.io/devopsoh/api-poi:${{ github.run_number }} --build-arg build_version=${{github.run_number}} apis/poi/
+        docker push openhack06u2z0e9acr.azurecr.io/devopsoh/api-poi:${{ github.run_number }}
+
 
