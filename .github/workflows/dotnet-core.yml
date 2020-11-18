@@ -5,8 +5,8 @@ on:
     branches: [ master ]
   pull_request:
     branches: [ master ]
-    paths: 
-      - apis/poi/
+    # paths: 
+      # - apis/poi/
 
 jobs:
   build-and-deploy:
@@ -34,6 +34,8 @@ jobs:
       uses: azure/webapps-deploy@v2
       with:
         app-name: 'openhack06u2z0e9poi'
+        #slot-name: 'staging'
         images: '${{ secrets.REGISTRY_LOGIN_SERVER }}/devopsoh/api-poi:${{ github.run_number }}'
+        
 
 
