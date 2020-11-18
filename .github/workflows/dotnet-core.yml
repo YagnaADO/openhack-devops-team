@@ -32,6 +32,6 @@ jobs:
         username: ${{ secrets.REGISTRY_USERNAME }}
         password: ${{ secrets.REGISTRY_PASSWORD }}
     - run: |
-        docker build -t ${{ secrets.REGISTRY_LOGIN_SERVER }}/api-poi:${{ github.run_number }} --build-arg build_version=${{github.run_number}} apis/poi/**
+        docker build -t ${{ secrets.REGISTRY_LOGIN_SERVER }}/api-poi:${{ github.run_number }} --build-args build_version=${{github.run_number}} apis/poi/
         docker push ${{ secrets.REGISTRY_LOGIN_SERVER }}/api-poi:${{ github.run_number }}
 
