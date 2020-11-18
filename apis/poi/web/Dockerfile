@@ -9,8 +9,9 @@ RUN dotnet restore
 COPY apis/poi/ /app/
 RUN dotnet publish -c Release -o out
 RUN ls -la /app/*
-COPY app/web/appsettings.*.json /app/out/
-COPY app/web/appsettings.json /app/out/
+# COPY app/web/appsettings.*.json /app/out/
+# COPY app/web/appsettings.json /app/out/
+COPY apis/poi/web/ /app/out/
 
 # build runtime image
 FROM microsoft/dotnet:2.1-aspnetcore-runtime
