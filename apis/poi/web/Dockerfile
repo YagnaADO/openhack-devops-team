@@ -13,7 +13,7 @@ COPY ./appsettings.json /app/out/
 
 # build runtime image
 FROM microsoft/dotnet:2.1-aspnetcore-runtime
-WORKDIR /app
+WORKDIR apis/poi/web/poi.csproj
 
 ENV SQL_USER="YourUserName" \
 SQL_PASSWORD="changeme" \
