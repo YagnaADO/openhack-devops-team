@@ -6,7 +6,7 @@ COPY apis/poi/web/poi.csproj ./
 RUN dotnet restore
 
 # copy everything else and build
-COPY . ./
+COPY apis/poi/* ./
 RUN dotnet publish -c Release -o out
 COPY ./appsettings.*.json /app/out/
 COPY ./appsettings.json /app/out/
